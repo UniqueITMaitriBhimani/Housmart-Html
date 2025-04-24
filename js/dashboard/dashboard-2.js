@@ -462,7 +462,7 @@
 					labels: ["00:00", "", "", "", "", "", "", "", "", "23:59"],
 					datasets: [{
 						label: "My First dataset",
-						backgroundColor: "#fc8019",
+						backgroundColor: "#1E466A",
 						//strokeColor: "rgba(255,255,255,0.3)",
 						pointColor: "rgba(0,0,0,0)",
 						//pointStrokeColor: "rgba(58,223,174,1)",

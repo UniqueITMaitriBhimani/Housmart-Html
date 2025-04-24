@@ -30,7 +30,7 @@
 				}],
 				resize: true,
 				redraw: true,
-				colors: ['#fc8019', 'rgb(255, 92, 0)', '#9D1CB2'],
+				colors: ['#1E466A', 'rgb(255, 92, 0)', '#9D1CB2'],
 				//responsive:true,
 				
 			});
@@ -142,12 +142,12 @@
 				labels: ['Phone', 'Windows', 'Mac'],
 				pointSize: 3,
 				fillOpacity: 0,
-				pointStrokeColors: ['#EE3C3C', '#9D1CB2', '#fc8019'],
+				pointStrokeColors: ['#EE3C3C', '#9D1CB2', '#1E466A'],
 				behaveLikeLine: true,
 				gridLineColor: 'transparent',
 				lineWidth: 3,
 				hideHover: 'auto',
-				lineColors: ['rgb(238, 60, 60)', 'rgb(0, 171, 197)', '#fc8019'],
+				lineColors: ['rgb(238, 60, 60)', 'rgb(0, 171, 197)', '#1E466A'],
 				resize: true
 
 			});
@@ -198,7 +198,7 @@
 					xkey: 'y',
 					ykeys: ['a', 'b', 'c'],
 					labels: ['A', 'B', 'C'],
-					barColors: ['#fc8019', '#9D1CB2', '#ff9f00'],
+					barColors: ['#1E466A', '#9D1CB2', '#ff9f00'],
 					hideHover: 'auto',
 					gridLineColor: 'transparent',
 					resize: true,
@@ -275,7 +275,7 @@
 				xkey: 'y',
 				ykeys: ['a', 'b'],
 				labels: ['A', 'B'],
-				barColors: ['#fc8019', "#F1F3F7"],
+				barColors: ['#1E466A', "#F1F3F7"],
 				hideHover: 'auto',
 				gridLineColor: 'transparent',
 				resize: true,
@@ -332,7 +332,7 @@
 
 
 				],
-				lineColors: ['#fc8019', 'rgb(16, 202, 147)', 'rgb(255, 92, 0)'],
+				lineColors: ['#1E466A', 'rgb(16, 202, 147)', 'rgb(255, 92, 0)'],
 				xkey: 'period',
 				ykeys: ['smartphone', 'windows', 'mac'],
 				labels: ['Phone', 'Windows', 'Mac'],

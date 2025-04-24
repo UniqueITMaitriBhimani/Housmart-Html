@@ -39,7 +39,7 @@ var dlabPiety = function(){
     var handlePietyPie = function(){
 		if(jQuery('span.pie').length > 0 ){
 			$("span.pie").peity("pie", {
-				fill: ['#fc8019', 'rgba(252, 128, 25, .3)'], 
+				fill: ['#1E466A', 'rgba(252, 128, 25, .3)'], 
 				width: "100",
 				height: "100"
 			});
@@ -59,7 +59,7 @@ var dlabPiety = function(){
 		if(jQuery('.peity-line').length > 0 ){
 			$(".peity-line").peity("line", {
 				fill: ["rgba(252, 128, 25, 1)"], 
-				stroke: '#fc8019', 
+				stroke: '#1E466A', 
 				width: "100%",
 				height: "100"
 			});
@@ -71,7 +71,7 @@ var dlabPiety = function(){
 			$(".peity-line-2").peity("line", {
 				fill: ['rgba(252, 128, 25, 0.3)'],
 				//stroke: "#f77f8b", 
-				stroke: "#fc8019", 
+				stroke: "#1E466A", 
 				//width: "100%",
 				width: getGraphBlockSize('.peity-line-2'),
 				strokeWidth: "3",
@@ -95,7 +95,7 @@ var dlabPiety = function(){
 	var handlePietyBar = function(){
 		if(jQuery('.bar').length > 0 ){
 			$(".bar").peity("bar", {
-				fill: ["#fc8019", "#9D1CB2", "#3693FF"],  
+				fill: ["#1E466A", "#9D1CB2", "#3693FF"],  
 				width: "100%",
 				height: "100",
 			});
@@ -105,7 +105,7 @@ var dlabPiety = function(){
 	var handlePietyBar1 = function(){
 		if(jQuery('.bar1').length > 0 ){
 			$(".bar1").peity("bar", {
-				fill: ["#fc8019", "#9D1CB2", "#3693FF"],    
+				fill: ["#1E466A", "#9D1CB2", "#3693FF"],    
 				//width: "100%",
 				width: getGraphBlockSize('.bar1'),
 				height: "140"
@@ -116,7 +116,7 @@ var dlabPiety = function(){
 	var handlePietyBarColours1 = function(){
 		if(jQuery('.bar-colours-1').length > 0 ){
 			$(".bar-colours-1").peity("bar", {
-				fill: ["#fc8019", "#9D1CB2", "#3693FF"],  
+				fill: ["#1E466A", "#9D1CB2", "#3693FF"],  
 				width: "100",
 				height: "100"
 			});
@@ -160,7 +160,7 @@ var dlabPiety = function(){
     var handlePietyColours2 = function(){
 		if(jQuery('.pie-colours-2').length > 0 ){
 			$(".pie-colours-2").peity("pie", {
-				fill: ["#fc8019", "#9D1CB2", "#3693FF", "#ff5c00", "#EE3C3C"],
+				fill: ["#1E466A", "#9D1CB2", "#3693FF", "#ff5c00", "#EE3C3C"],
 				width: "100",
 				height: "100"
 			});
