@@ -285,10 +285,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   background-color: #FFFFFF;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -1556,7 +1556,7 @@ progress {
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: #777777;
+  /* color: #777777; */
   vertical-align: top;
   border-color: #B3B3B3; }
   .table > :not(caption) > * > * {
@@ -1746,7 +1746,7 @@ progress {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #DBDBDB;
@@ -1761,7 +1761,7 @@ progress {
     .form-control[type="file"]:not(:disabled):not([readonly]) {
       cursor: pointer; }
   .form-control:focus {
-    color: #777777;
+    /* color: #777777; */
     background-color: #fff;
     border-color: #fec08c;
     outline: 0;
@@ -1778,7 +1778,7 @@ progress {
     padding: 0.375rem 0.75rem;
     margin: -0.375rem -0.75rem;
     margin-inline-end: 0.75rem;
-    color: #777777;
+    /* color: #777777; */
     background-color: #e9ecef;
     pointer-events: none;
     border-color: inherit;
@@ -1796,7 +1796,7 @@ progress {
     padding: 0.375rem 0.75rem;
     margin: -0.375rem -0.75rem;
     margin-inline-end: 0.75rem;
-    color: #777777;
+    /* color: #777777; */
     background-color: #e9ecef;
     pointer-events: none;
     border-color: inherit;
@@ -1817,7 +1817,7 @@ progress {
   padding: 0.375rem 0;
   margin-bottom: 0;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0; }
@@ -1882,7 +1882,7 @@ textarea.form-control-lg {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -2128,7 +2128,7 @@ textarea.form-control-lg {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
@@ -2300,7 +2300,7 @@ textarea.form-control-lg {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  color: #777777;
+  /* color: #777777; */
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -2316,7 +2316,8 @@ textarea.form-control-lg {
     .btn {
       transition: none; } }
   .btn:hover {
-    color: #777777; }
+    /* color: #777777; } */
+  }
   .btn-check:focus + .btn, .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(252, 128, 25, 0.25); }
@@ -2784,7 +2785,7 @@ textarea.form-control-lg {
   padding: 0.5rem 0;
   margin: 0;
   font-size: 0.875rem;
-  color: #777777;
+  /* color: #777777; */
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -3548,7 +3549,7 @@ textarea.form-control-lg {
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 0.875rem;
-  color: #777777;
+  /* color: #777777; */
   text-align: left;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -7669,7 +7670,7 @@ body {
   height: 100%;
   position: relative;
   max-width: 100%;
-  font-size: 0.875rem; }
+  font-size: 1rem; }
   @media only screen and (max-width: 61.9375rem) {
     body {
       font-size: 0.875rem; } }
@@ -11844,7 +11845,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       font-weight: 500;
       display: inline-block;
       font-size: 1rem;
-      color: #777777; }
+      /* color: #777777; */
+     }
       .metismenu > li > a i {
         color: #96A0AF; }
       .metismenu > li > a svg {
@@ -11943,7 +11945,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     display: block;
     padding: 0.625rem 1.875rem;
     outline-width: 0;
-    color: #777777;
+    /* color: #777777; */
     text-decoration: none; }
     @media only screen and (max-width: 47.9375rem) {
       .metismenu a {
@@ -22903,7 +22905,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   line-height: 3rem;
-  color: #777777;
+  /* color: #777777; */
   padding-left: 0.9375rem;
   min-height: 3rem; }
 
