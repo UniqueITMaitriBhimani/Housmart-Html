@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+         <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="FoodDesk - Online Food Delivery Admin Dashboard">
+	<meta property="og:title" content="FoodDesk - Online Food Delivery Admin Dashboard">
+	<meta property="og:description" content="FoodDesk - Online Food Delivery Admin Dashboard">
+	<meta property="og:image" content="https://fooddesk.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+		<title>Service List</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+     <link href="vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/dev-style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <style>
+      
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+   .headerpage {
+         margin-left: 0px !important;
+            width: 100% !important; 
+        }
+
+        #card {
+          width: 55% ;
+          height: 160px ;
+          border-radius: 20px;
+      }
+.domain-name-dropdown{
+  height: 58px;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer; 
+ 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.status-card .count {
+  font-size: 2em;
+}
+.status-card.pending { background-color: #F6A1A1; }
+.status-card.working { background-color: #b3d1ff; }
+.status-card.completed { background-color: #d3f1e4; }
+
+.status-card.pending-active {
+  background-color: #E44141; /* Color when pending card is clicked */
+  color: white;  
+}
+
+.status-card.working-active {
+  background-color: #007bff; /* Color when working card is clicked */
+  color: white;
+}
+
+.status-card.completed-active {
+  background-color: #0DA759; /* Color when completed card is clicked */
+  color: #ffff; 
+}
+
+.status-card.pending-active h4{
+  color: #fff !important;
+}
+.status-card.pending-active h2{
+  color: #fff !important;
+}
+.pending-active.a-pending::after{
+  position: absolute;
+  content: '';
+  left: 31%;
+  bottom: 687px;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #E44141 transparent;
+  transform: rotate(179deg);transition: 1s;
+}
+
+
+.status-card.working-active h4{
+  color: #fff !important;
+}
+.status-card.working-active h2{
+  color: #fff !important;
+}
+.working-active.a-working::after{
+  position: absolute;
+  content: '';
+  left: 58%;
+  bottom: 687px;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #007bff transparent;
+  transform: rotate(179deg);transition: 1s;
+}
+
+.status-card.completed-active h4{
+  color: #fff !important;
+}
+.status-card.completed-active h2{
+  color: #fff !important;
+}
+.completed-active.a-completed::after{
+  position: absolute;
+  content: '';
+  left: 84%;
+  bottom: 689px ;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #0DA759 transparent;
+  transform: rotate(179deg);transition: 1s;
+}
+
+
+
+
+
+
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+    </style>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+   <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+          <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+			<svg class="logo-abbr" width="39" height="31" viewbox="0 0 39 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M25.125 21.125L26.9952 23.2623C27.6771 24.0417 28.8616 24.1206 29.6409 23.4387C29.7036 23.3839 29.7625 23.325 29.8173 23.2623L31.6875 21.125H36.375C35.2848 26.5762 30.4985 30.5 24.9393 30.5H14.0607C8.5015 30.5 3.71523 26.5762 2.625 21.125H25.125Z" fill="var(--primary)"></path>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M36.375 9.875H2.625C3.71523 4.4238 8.5015 0.5 14.0607 0.5H24.9393C30.4985 0.5 35.2848 4.4238 36.375 9.875Z" fill="var(--primary)"></path>
+					<path opacity="0.3" d="M36.375 13.625H2.625C1.58947 13.625 0.75 14.4645 0.75 15.5C0.75 16.5355 1.58947 17.375 2.625 17.375H36.375C37.4105 17.375 38.25 16.5355 38.25 15.5C38.25 14.4645 37.4105 13.625 36.375 13.625Z" fill="var(--primary)"></path>
+				</svg>
+				<h1 class="text-white" style="margin-top: 9px; margin-left: 10px;">Housmart </h1>
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+        <!--**********************************
+            Header start
+        ***********************************-->
+		<div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+					<div class="container d-block my-0">
+						<div class="d-flex align-items-center justify-content-sm-between justify-content-end">
+							<div class="header-left">
+							</div>
+							
+							<ul class="navbar-nav header-right ">
+								<li>
+									<div class="dropdown header-profile2 ">
+										<a class="nav-link " href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+											<div class="header-info2 d-flex align-items-center">
+												<img src="images/banner-img/pic-1.png" alt="">
+												<div class="d-flex align-items-center sidebar-info">
+													<div>
+														<h6 class="font-w500 mb-0 ms-2">Maitri Bhimani</h6>
+													</div>	
+													<i class="fas fa-chevron-down"></i>
+												</div>
+												
+											</div>
+										</a>
+										<div class="dropdown-menu dropdown-menu-end">
+										
+											<a href="page-login.html" class="dropdown-item ai-icon ms-1">
+												<svg xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+												<span class="ms-1">Logout </span>
+											</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+      
+        
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav border-right">
+            <div class="dlabnav-scroll">
+					
+				<ul class="metismenu" id="menu">
+					
+                    <li><a href="index.html" class="" aria-expanded="false">
+                        <i class="bi bi-grid"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+				<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+					<i class="bi bi-bicycle"></i>
+						<span class="nav-text">Manage Leads</span>
+					</a>
+					<ul aria-expanded="false">
+						<li><a href="lead-list.html">Leads</a></li>
+						<li><a href="all-quotation-list.html">Quotations</a></li>
+
+					</ul>
+				</li>
+					<!-- <li><a class="" href="lead-list.html" aria-expanded="false">
+								<i class="bi bi-shop-window"></i>
+							<span class="nav-text">Manage Leads </span>
+						</a>
+                        
+                    </li> -->
+					<li><a href="project-list.html" aria-expanded="false">
+						<i class="bi bi-bicycle"></i>
+							<span class="nav-text">Manage Project</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<i class="bi bi-bicycle"></i>
+							<span class="nav-text">Manage Services</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="service-list.html">Services</a></li>
+							<li><a href="engineer-list.html">Engineers</a></li>
+							<li><a href="problem-list.html">Problems</a></li>
+
+						</ul>
+                    </li>
+                    <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<i class="bi bi-bicycle"></i>
+							<span class="nav-text">Manage Bills</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="bill-in-list.html">Purchase (Bill In)</a></li>
+							<li><a href="billing-list.html">Selling (Bill Out)</a></li>
+							<li><a href="challan-list.html">Challan</a></li>
+							<li><a href="vendor-list.html">Vendor</a></li>
+
+						</ul>
+                    </li>
+					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+						<i class="bi bi-bicycle"></i>
+							<span class="nav-text">Manage Stocks</span>
+						</a>
+                        <ul aria-expanded="false">
+                          <li><a href="category-list.html">Category</a></li>
+                          <li><a href="product-list.html">Product</a></li>
+                                        <li><a href="stock.html">Stock</a></li>
+						</ul>
+                    </li>
+                </ul>
+			
+				
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+        
+            <div class="container">
+			
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h2 class="card-title mb-0">Rejected Service List</h2>
+                            </div>
+                            
+                
+                            <div class="card-body">
+                                <!-- Table view for desktop -->
+                                <div class="table-responsive d-none d-md-block">
+                                    <table class="table table-responsive-md">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th><strong>No.</strong></th>
+                                                <th><strong>Project Name</strong></th>
+                                                <th><strong>Client Name</strong></th>
+                                                <th><strong>Stage</strong></th>
+
+                                                <th><strong>Problem</strong></th>
+                                                <th><strong>Is AMC ?</strong></th>
+                                                <th><strong>Actions</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <td><strong>542</strong></td>
+                                                <td>Maitri Bhimani</td>
+                                                <td>Maitri Bhimani</td>
+                                                <td>Maitri Bhimani</td>
+
+                                                <td>2</td>
+                                                <td>Yes</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center">
+                                                      <a href="#" class="btn btn-info shadow edit-button me-1"
+                                                      data-bs-toggle="modal" title="View" data-bs-target="#viewServiceModal">
+                                                          <i class="bi bi-eye-fill"></i>
+                                                      </a>
+                                                        <!-- <a href="#" class="btn btn-primary shadow edit-button me-1">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </a> -->
+                                                        <!-- <a href="#" class="btn btn-secondary shadow edit-button me-1"
+                                                        data-bs-toggle="modal" data-bs-target="#changeStageModal" title="Stage Change">
+                                                        <i class="fa fa-exchange"></i>
+                                                     </a> -->
+                                                        <!-- <a href="#" class="btn btn-primary shadow edit-button me-1"
+                                                        data-bs-toggle="modal" data-bs-target="#assignEngineerModal" title="Stage Change">
+                                                            <i class="bi bi-arrow-clockwise"></i>
+                                                        </a> -->
+                                                        <a href="#" class="btn btn-danger shadow edit-button">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                
+                                <!-- Accordion view for mobile -->
+                             <!-- Accordion view for mobile -->
+                             <div class="d-block d-md-none">
+                                <div class="accordion" id="mobileTableAccordion">
+                            
+                                    <!-- Item 1 -->
+                                    <div class="card">
+                                        <div class="card-header p-2" id="heading1">
+                                            <h2 class="mb-0 d-flex justify-content-end align-items-end">
+                                                <!-- Name on the left -->
+                                                <button class="btn btn-link text-left p-0 m-0" type="button" data-toggle="collapse" data-target="#collapse1">
+                                                    Kolor Tea Shirt For Man
+                                                </button>
+                                        
+                                                <!-- Icons on the right -->
+                                                <div class="d-flex align-items-end text-end">
+                                                    <a href="#" class="btn btn-xs btn-primary me-1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </h2>
+                                        </div>
+                                        
+                                        
+                                        <div id="collapse1" class="collapse" data-parent="#mobileTableAccordion">
+                                            <div class="card-body">
+                                                <p><strong>No.:</strong> 101</p>
+                                                <p><strong>Sequence:</strong> 1</p>
+                                                <p><strong>Document:</strong> <i class="bi bi-file-arrow-down fs-1 text-primary"></i></p>
+                                                <p><strong>Stage:</strong> <span class="badge badge-primary">New</span></p>
+                                                <p><strong>Date:</strong> January 22</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- You can repeat this block for each item -->
+                                    
+                                </div>
+                            </div>
+                            
+
+                
+                                <!-- Pagination and Dropdown (shared) -->
+                                <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                                    <div class="dropdown custom-dropdown mt-3">
+                                        <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="dropdown">
+                                            10 <i class="fa fa-angle-down ms-3"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">10</a>
+                                            <a class="dropdown-item" href="#">50</a>
+                                            <a class="dropdown-item" href="#">100</a>
+                                        </div>
+                                    </div>
+                
+                                    <nav>
+                                        <ul class="pagination pagination-gutter">
+                                            <li class="page-item page-indicator">
+                                                <a class="page-link" href="javascript:void(0)"><i class="la la-angle-left"></i></a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                            <li class="page-item page-indicator">
+                                                <a class="page-link" href="javascript:void(0)"><i class="la la-angle-right"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+<!-- Stage Change Modal -->
+<div class="modal fade" id="changeStageModal" tabindex="-1" aria-labelledby="changeStageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeStageModalLabel">Stage Change</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="mb-3 col-md-12">
+                  <label>Stage</label>
+                  <select class="single-select">
+                   <option value="AL">New</option>
+                   <option value="WY">Working</option>
+                   <option value="WY">Pending</option>
+  
+               </select>
+              
+              </div>
+              <div class="col-md-12">
+                      <label class="form-label">Remarks</label>
+                      <input type="text" class="form-control" placeholder="">
+                  </div>
+          </div>
+          <div class="mb-2 row mt-3">
+              <div class="col-lg-12 ms-auto text-center">
+                  <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<!-- Stage Change Modal -->
+<div class="modal fade" id="changeStageModal" tabindex="-1" aria-labelledby="changeStageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeStageModalLabel">Stage Change</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="mb-3 col-md-12">
+                  <label>Engineers</label>
+                  <select class="single-select">
+                   <option value="AL">Maitri</option>
+                   <option value="WY">Arpit</option>
+                   <option value="WY">Brijesh</option>
+  
+               </select>
+              
+              </div>
+              <div class="col-md-12">
+                      <label class="form-label">Remarks</label>
+                      <input type="text" class="form-control" placeholder="">
+                  </div>
+          </div>
+          <div class="mb-2 row mt-3">
+              <div class="col-lg-12 ms-auto text-center">
+                  <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+  <!--View Modal-->
+  <div class="modal fade" id="viewServiceModal" tabindex="-1" aria-labelledby="viewServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="padding-right: 10px;;" id="viewServiceModalLabel">Services Details</h4> <span class="badge light badge-success me-1">With AMC</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+<div class="col-md-6">
+    <p class="fs-6 mb-1"><strong>Project Name : </strong>Maitri Bhimani</p>
+</div>
+<div class="col-md-6">
+  <p class="fs-6 mb-1"><strong>Client Name : </strong>Maitri Bhimani</p>
+</div>
+<div class="col-md-6">
+  <p class="fs-6 mb-1"><strong>Problem : </strong>Maitri Bhimani</p>
+</div>
+<div class="col-md-6">
+    <p class="fs-6 mb-1"><strong>Arrival Date : </strong>24/05/2025</p>
+</div>
+<div class="col-md-6">
+    <p class="fs-6 mb-1"><strong>Service Stage : </strong> <span class="badge light badge-success me-1">Send</span> </p>
+</div>
+<div class="col-md-12 text-center mt-3"><h2>Assign Engineers</h2></div>
+<div class="col-xl-12">
+    <div class="card bg-light border-0">
+        <div class="card-body mb-0 p-3 pt-1 pb-0">
+            
+            <div class="mb-2 fw-bold fs-4">Engineer Name</div>
+          
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="text-muted fs-5">Remarks</div>
+            </div>
+        </div>
+    </div> 
+
+
+</div>
+<div class="col-md-12 text-center mt-3"><h2>Service History</h2></div>
+<div class="col-xl-12">
+    <div class="card bg-light border-0">
+        <div class="card-body mb-0 p-3 pt-1 pb-0">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <!-- Left Side: Name and Remarks -->
+                <div>
+                    <div class="mb-2 fw-bold fs-4">Quotation Name</div>
+                    <div class="text-muted fs-5">Remarks</div>
+                </div>
+    
+                <!-- Right Side: Date and Stage Convert Badge -->
+                <div class="text-end">
+                    <div class="text-muted fs-6 mb-1">19-Apr-2025</div>
+                    <span class="badge bg-success">Prepare</span>  <i class="fa-solid fa-arrow-right"></i>
+                    <span class="badge bg-success">Quotation Send</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage Change Modal -->
+<div class="modal fade" id="assignEngineerModal" tabindex="-1" aria-labelledby="assignEngineerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="assignEngineerModalLabel">Assign Engineer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="mb-3 col-md-12">
+                  <label>Engineers</label>
+                  <select class="single-select">
+                   <option value="AL">Maitri</option>
+                   <option value="WY">Arpit</option>
+                   <option value="WY">Brijesh</option>
+  
+               </select>
+              
+              </div>
+              <div class="col-md-12">
+                      <label class="form-label">Remarks</label>
+                      <input type="text" class="form-control" placeholder="">
+                  </div>
+          </div>
+          <div class="mb-2 row mt-3">
+              <div class="col-lg-12 ms-auto text-center">
+                  <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright border-top">
+                <p>Copyright © Designed   by <a href="http://theuniqueitsolution.com/" target="_blank">Unique It Solutions</a> 2025</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="js/plugins-init/select2-init.js"></script>
+	
+	<script src="vendor/ckeditor/ckeditor.js"></script>
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendor/select2/js/select2.full.min.js"></script>
+    <script src="js/custom.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+<script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+	<script src="js/demo.js"></script>
+
+
+    <!-- <script src="js/styleSwitcher.js"></script> -->
+
+</body>
+</html>
