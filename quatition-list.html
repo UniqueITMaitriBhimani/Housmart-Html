@@ -244,7 +244,7 @@
                                                     <div class="d-flex justify-content-center">
                                                       
                                                         <a href="#" class="btn btn-warning shadow edit-button me-1"
-                                                       title="Convert To Project">
+                                                      data-bs-toggle="modal" data-bs-target="#projectTransferModal" title="Convert To Project">
                                                        <i class="bi bi-arrow-clockwise"></i>
                                                      </a>
                                                      <a href="#" class="btn btn-secondary shadow edit-button me-1"
@@ -444,6 +444,57 @@
 </div>
             </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Convert to Project Modal-->
+  <div class="modal fade" id="projectTransferModal" tabindex="-1" aria-labelledby="projectTransferModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectTransferModalLabel">Convert into Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+    <form>
+        <div class="row mb-3">
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Create New Project</button>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+    <div class="col-12">
+        <div class="d-flex align-items-center">
+            <hr class="flex-grow-1">
+            <span class="px-2 text-muted">or</span>
+            <hr class="flex-grow-1">
+        </div>
+    </div>
+</div>
+
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="clientSelect" class="form-label">Client</label>
+                <select id="clientSelect" class="form-select single-select">
+                    <option value="AL">Maitri</option>
+                    <option value="WY">Arpit</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+      
       </div>
     </div>
   </div>
